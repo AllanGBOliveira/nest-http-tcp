@@ -1,0 +1,20 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    container_name: nest-http-tcp
+    env_file:
+      - .env
+    ports:
+      - "${PORT}:3009"
+      - "${TCP_PORT}:3008"
+    volumes:
+      - ./:/app:rw
+      - type: bind
+        source: ${DB_FILE:-./db.json}
+        target: /app/db.json
+    command: sh -c "npm ci && npm run start:dev"
+    restart: unless-stopped
+
+

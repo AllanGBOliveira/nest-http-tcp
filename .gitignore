@@ -1,0 +1,46 @@
+# dependências
+/node_modules
+
+# builds e artefatos de compilação
+/dist
+/build
+/out
+
+# IDEs e editores de código
+/.idea
+/.awcache
+/.vscode
+*.sublime-project
+*.sublime-workspace
+.DS_Store # Mac
+Thumbs.db # Windows
+
+# logs, caches e arquivos temporários
+npm-debug.log*
+yarn-error.log*
+.eslintcache
+.prettiercache
+.cache/
+.temp/
+
+# arquivos de ambiente
+.env
+.env.local
+.env.production
+.env.development
+
+# testes e cobertura
+/coverage
+/.nyc_output
+/test/e2e
+/test/unit
+
+# arquivos de dados e backups
+*.sqlite
+*.sqlite-journal
+*.log
+*.bak
+*.swp
+
+# exemplos e arquivos temporários de desenvolvimento
+/quick-start

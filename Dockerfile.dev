@@ -1,0 +1,22 @@
+FROM node:alpine
+
+WORKDIR /app
+
+ENV NODE_ENV=development
+ENV PORT=3009
+ENV TCP_PORT=3008
+
+# Install dependencies (include dev deps for CLI and tooling)
+COPY package.json package-lock.json ./
+RUN npm ci
+
+# Copy project files (ts sources and configs)
+COPY tsconfig*.json ./
+COPY src ./src
+COPY eslint.config.mjs ./
+
+EXPOSE 3009 3008
+
+CMD ["npm", "run", "start:dev"]
+
+
